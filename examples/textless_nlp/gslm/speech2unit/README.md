@@ -35,7 +35,7 @@ LAYER=<layer_of_acoustic_model_to_extract_features_from>
 MANIFEST=<tab_separated_manifest_of_audio_files_for_training_kmeans>
 KM_MODEL_PATH=<output_path_of_the_kmeans_model>
 
-PYTHONPATH=. python examples/textless_nlp/gslm/speech2unit/clustering/cluster_kmeans.py \
+PYTHONPATH=. python preprocess/clustering/cluster_kmeans.py \
     --num_clusters $N_CLUSTERS \
     --feature_type $TYPE \
     --checkpoint_path $CKPT_PATH \
@@ -48,7 +48,7 @@ PYTHONPATH=. python examples/textless_nlp/gslm/speech2unit/clustering/cluster_km
 MANIFEST=<tab_separated_manifest_of_audio_files_to_quantize>
 OUT_QUANTIZED_FILE=<output_quantized_audio_file_path>
 
-python examples/textless_nlp/gslm/speech2unit/clustering/quantize_with_kmeans.py \
+python preprocess/clustering/quantize_with_kmeans.py \
     --feature_type $TYPE \
     --kmeans_model_path $KM_MODEL_PATH \
     --acoustic_model_path $CKPT_PATH \
